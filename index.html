@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Www.Dhanush_project.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+
+
+<style>
+    .dancing-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Increase font size */
+.navbar .nav-link {
+  font-size: 1.5rem;
+}
+
+/* Center text on mobile and reduce horizontal padding */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navbar .nav-link {
+    font-size: 1.1rem; /* slightly smaller for mobile if needed */
+  }
+}
+
+  /* Loading Screen Styling */
+  .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+  }
+
+  .spinner-border {
+      width: 3rem;
+      height: 3rem;
+      border-width: 0.3em;
+  }
+  .stack-box {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+
+    .stack-box:hover {
+      background-color: #007bff;
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 123, 255, 0.5);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stack-box:nth-child(1) { animation-delay: 0.1s; }
+    .stack-box:nth-child(2) { animation-delay: 0.2s; }
+    .stack-box:nth-child(3) { animation-delay: 0.3s; }
+    .stack-box:nth-child(4) { animation-delay: 0.4s; }
+    .stack-box:nth-child(5) { animation-delay: 0.5s; }
+    .stack-box:nth-child(6) { animation-delay: 0.6s; }
+    .stack-box:nth-child(7) { animation-delay: 0.7s; }
+    .stack-box:nth-child(8) { animation-delay: 0.8s; }
+    .stack-box:nth-child(9) { animation-delay: 0.9s; }
+
+    .form-container {
+      max-width: 600px;
+      margin: 5% auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .carousel-container {
+      max-width: 700px;
+      margin: 50px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain; /* Show full image without cropping */
+      background-color: #f8f9fa; /* Light background to pad images */
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .carousel-item img {
+        height: 150px;
+      }
+    }
+</style>
+
+</head>
+<body>
+  <!-- Loading Overlay -->
+<div class="loading-overlay" id="loading-screen">
+    <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<!-- nave bar Star-->
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark animate__animated animate__fadeInDown">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto text-center w-100">
+          <li class="nav-item px-lg-4 py-2">
+            <a class="nav-link dancing-script text-white" href="#home">Home</a>
+          </li>
+          <li class="nav-item px-lg-4 py-2">
+            <a class="nav-link dancing-script text-white" href="#project">Project</a>
+          </li>
+          <li class="nav-item px-lg-4 py-2">
+            <a class="nav-link dancing-script text-white" href="#mywork">MY Work</a>
+          </li>
+          <li class="nav-item px-lg-4 py-2">
+            <a class="nav-link dancing-script text-white" href="#eproject">Explore project</a>
+          </li>
+          <li class="nav-item px-lg-4 py-2">
+            <a class="nav-link dancing-script text-white" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<!-- nave bar end -->
+
+<!-- About Start -->
+<div id="home" class=" container-fluid btn-light" style="padding: auto;">
+  <h2 class="text-center btn-light dancing-script text-dark" style="font-size: 50px;" data-aos="fade-up">Home</h2>
+</div>
+
+<!-- Main content -->
+<main class="">
+  <div class=" container py-5">
+    <h1 class="dancing-script" data-aos="fade-up">Smart Payment Network Development Sysytem</h1>
+    <br>
+    <h3 class="dancing-script" data-aos="fade-up" data-aos-delay="100">
+        Description: Developed a RFID-based canteen system using HTML, CSS, JavaScript, PHP, andMongoDB.
+    </h3>
+    <br>
+    <h3 class="dancing-script" data-aos="fade-up" data-aos-delay="200">
+        Admin Interface: Allows canteen administrators to manage menus, view sales data, and generate reports.impactful.
+    </h3>
+    <br>
+    <h3 class="dancing-script" data-aos="fade-up" data-aos-delay="100">
+        Canteen Interface: Allows canteen employees to log sales and manage inventory.
+    </h3>
+    <br>
+    <h3 class="dancing-script" data-aos="fade-up" data-aos-delay="100">
+        Student Interface: Allows customers to view menus, place orders, and make payments using RFID cards.
+    </h3>
+    <br>
+    <h3 class="dancing-script" data-aos="fade-up" data-aos-delay="100">
+        Technologies Used: HTML, CSS, JavaScript, PHP, MySQL.
+    </h3>
+  </div>
+</main>
+
+
+
+<!-- About end -->
+ 
+  <br>
+ 
+  <div id="project" class="container-fluid bg-primary py-5">
+    <h2 class="text-center dancing-script text-light" style="font-size: 50px;">Project</h2>
+    
+<br>
+
+<div class="carousel-container">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 (Active) -->
+        <div class="carousel-item active">
+          <img src="assets/img/bg1.png" class="d-block w-100" alt="Slide 1">
+        </div>
+
+        <!-- Slides 2 to 19 -->
+        <!-- You can change image URLs as needed -->
+        <div class="carousel-item">
+          <img src="assets/img/bg2.png" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg3.png" class="d-block w-100" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg4.png" class="d-block w-100" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg5.png" class="d-block w-100" alt="Slide 5">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg6.png" class="d-block w-100" alt="Slide 6">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg7.png" class="d-block w-100" alt="Slide 7">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg8.png" class="d-block w-100" alt="Slide 8">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg9.png" class="d-block w-100" alt="Slide 9">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg10.png" class="d-block w-100" alt="Slide 10">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg11.png" class="d-block w-100" alt="Slide 11">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg12.png" class="d-block w-100" alt="Slide 12">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg13.png" class="d-block w-100" alt="Slide 13">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg14.png" class="d-block w-100" alt="Slide 14">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg15.png" class="d-block w-100" alt="Slide 15">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg16.png" class="d-block w-100" alt="Slide 16">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg17.png" class="d-block w-100" alt="Slide 17">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg18.png" class="d-block w-100" alt="Slide 18">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/bg19.png" class="d-block w-100" alt="Slide 19">
+        </div>
+        <div class="carousel-item">
+            <img src="assets/img/bg25.jpg" class="d-block w-100" alt="Slide 20">
+          </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+    </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#multiSlideCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#multiSlideCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>  
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+
+
+<!-- Work start -->
+
+<div id="mywork" class="container-fluid bg-dark py-5">
+  <h2 class="text-center dancing-script text-light" style="font-size: 50px;">My Work</h2>
+
+  <div class="container py-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <!-- Card 1 -->
+      <div class="col" data-aos="fade-up">
+        <div class="card text-white bg-primary h-100">
+          <img src="assets/img/bg20.png" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="card text-white bg-primary h-100">
+          <img src="assets/img/bg21.png" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="400">
+        <div class="card text-white bg-primary h-100">
+          <img src="assets/img/bg22.png" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col" data-aos="fade-up" data-aos-delay="600">
+        <div class="card text-white bg-primary h-100">
+          <img src="assets/img/bg23.png" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Work end -->
+
+<!-- Education start -->
+<div id="eproject" class="container-fluid bg-dark py-5">
+  <h2 class="text-center dancing-script text-light" style="font-size: 50px;" data-aos="fade-up">Explore project</h2>
+<br>
+<h3 class="text-center dancing-script text-light" style="font-size: 50px;" data-aos="fade-up"> TO Explore my project click below button</h3>
+<br>
+<div class="text-center mt-4" data-aos="zoom-in">
+  <a href="https://dhanushk4113.github.io/SPNDS_dashboard/index.html" target="_blank" rel="noopener noreferrer">
+    <button class="btn btn-primary bg-warning text-dark explore-btn dancing-script px-5 py-3 fs-4">
+      Explore
+    </button>
+  </a>
+</div>
+
+
+</div>
+
+
+<!-- Education end -->
+<!-- cantact start -->
+<div id="contact" class="abt-itm">
+  <div class="abt-itm container-fluid btn-light" style="padding: auto;" data-aos="fade-up">
+    <h2 class="abt-itm text-center btn-light dancing-script text-dark" style="font-size: 50px;">Contact</h2>
+  </div>
+  
+  <div class="container abt-itm text-center mt-5" data-aos="fade-up">
+    <h2 class="text-dark abt-itm dancing-script mb-4">Get in Touch</h2>
+    <br>
+
+    <h2 class="text-dark dancing-script mb-4">Interested to work together? Or Hire me? Let's talk</h2>
+    <br>
+
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-3" data-aos="fade-up">
+      <!-- Contact Me (Phone) -->
+      <a href="tel:+919080983864" class="con-btn btn btn-outline-light btn-lg responsive-contact text-dark dancing-script bg-warning">
+        <i class="fas fa-phone" style="color: black;"></i> Contact Me
+      </a>
+
+      <!-- Mail Me (Email) -->
+      <a href="mailto:dhanushk4113@gmail.com" class="con-btn btn btn-outline-light btn-lg responsive-contact text-dark dancing-script bg-warning">
+        <i class="fas fa-envelope" style="color: black;"></i> Mail Me
+      </a>
+      
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/dhanush-k-4113d" target="_blank" class="con-btn btn btn-outline-light btn-lg responsive-contact text-dark dancing-script bg-warning">
+        <i class="fas fa-link" style="color: black;"></i> Connect on LinkedIn
+      </a>
+
+      <a href="assets/resume/DhanushK_CV.pdf" download class="con-btn btn btn-outline-light btn-lg responsive-contact text-dark dancing-script bg-warning">
+        <i class="fas fa-file-pdf" style="color: black;"></i> Download Resume
+      </a>
+    </div>
+    <br>
+
+    <!-- Contact Form Section -->
+    <div class="form-container" data-aos="fade-up">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <form id="contact-form">
+        <div class="mb-3">
+          <input type="text" id="name" class="form-control" placeholder="Your Name" required />
+        </div>
+        <div class="mb-3">
+          <input type="email" id="email" class="form-control" placeholder="Your Email" required />
+        </div>
+        <div class="mb-3">
+          <textarea id="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+      <p id="response-message" class="text-center mt-3"></p>
+    </div>
+  </div>
+  <br>
+</div>
+
+
+
+<!-- cantact end -->
+
+
+  <!-- footer start -->
+  <!-- Sticky Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-2 dancing-script">Connect with me:</p>
+      <div class="d-flex justify-content-center gap-4">
+        <a href="https://www.linkedin.com/in/dhanush-k-4113d" target="_blank" class="text-white fs-4">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/k_d_mady/" target="_blank" class="text-white fs-4">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://github.com/dhanushk4113" target="_blank" class="text-white fs-4">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="mailto:dhanushk4113@gmail.com" class="text-white fs-4">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+      <p class="mt-3 mb-0 dancing-script">&copy; 2025 Dhanush K. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<!-- footer end -->    
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Animation duration in milliseconds
+    offset: 200,    // Offset for triggering animations (in px)
+    easing: 'ease-in-out', // Animation easing
+  });
+</script>
+<script>
+    // Hide loading screen after 5 seconds
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, 2000); // 5000 milliseconds = 5 seconds
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        offset: 200,
+        easing: 'ease-in-out',
+    });
+</script>
+<script>
+    
+  const form = document.getElementById('contact-form');
+  const responseMessage = document.getElementById('response-message');
+  
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+  
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    };
+  
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyoXU0D3h1LsPh0A_1Foi7Nxu2Jo8ZFHZ5OxCDTHP8FEFPVnfSqHU_OFx7epfCHApLieQ/exec', {
+        method: 'POST',
+        body: JSON.stringify(formData)
+      });
+  
+      if (response.ok) {
+        responseMessage.textContent = 'Thank you! Your message has been sent.';
+        form.reset();
+      } else {
+        responseMessage.textContent = 'Error submitting the form. Please try again.';
+      }
+    } catch (error) {
+      responseMessage.textContent = 'An error occurred. Please try again.';
+    }
+  });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+          const navbarCollapse = document.querySelector(".navbar-collapse");
+      
+          navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+              const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false
+              });
+              bsCollapse.hide();
+            });
+          });
+        });
+      </script>
+      
+
+</body>
+</html>

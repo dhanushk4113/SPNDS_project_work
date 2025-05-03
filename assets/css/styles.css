@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.custom-font {
+    font-family: cursive
+}
+
+.dancing-script {
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
+    /* Adjust to 400, 500, 600, or 700 */
+    font-style: normal;
+}
+
+.nav-item {
+    font-size: 30px;
+}
+
+.responsive-contact {
+    font-size: 1rem;
+    /* Default size for mobile */
+}
+
+@media (min-width: 768px) {
+    .responsive-contact {
+        font-size: 1.4rem;
+        /* Larger font on desktop/tablet */
+    }
+}
+
+.abt-itm {
+    background-color: rgb(214, 214, 228);
+}
+
+.con-btn {
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
